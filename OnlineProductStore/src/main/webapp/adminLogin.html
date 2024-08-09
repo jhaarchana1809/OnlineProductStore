@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Admin Login Page</title>
+<style>
+body {
+	font-family: Arial, sans-serif;
+	background-color: #f0f0f0;
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+}
+
+nav {
+	background-color: #4CAF50;
+	padding: 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+nav h1 {
+	color: white;
+	margin: 0;
+}
+
+nav .links {
+	display: flex;
+	gap: 10px;
+}
+
+nav a {
+	display: inline-block;
+	padding: 10px 20px;
+	text-decoration: none;
+	color: #4CAF50;
+	background-color: white;
+	border-radius: 5px;
+	transition: background-color 0.3s, color 0.3s;
+}
+
+nav a:hover {
+	background-color: #45a049;
+	color: white;
+}
+
+form {
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	width: 50%;
+	margin:50px auto
+	
+}
+
+input[type="text"], input[type="password"] {
+	width: 90%;
+	padding: 10px;
+	margin: 10px;
+	
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+input[type="submit"] {
+	width: 94%;
+	background-color: #4CAF50;
+	color: white;
+	margin: 10px;
+	padding: 10px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+input[type="submit"]:hover {
+	background-color: #45a049; nav { background-color : #4CAF50;
+	padding: 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+}
+</style>
+<script>
+	function validateForm() {
+		var uname = document.forms["adminLoginForm"]["uname"].value;
+		var password = document.forms["adminLoginForm"]["password"].value;
+
+		if (uname == "" || password == "") {
+			alert("User Name and Password must be filled out");
+			return false;
+		}
+
+		return true;
+	}
+</script>
+</head>
+<body>
+	<nav>
+		<h1>Welcome to our store</h1>
+		<div class="links">
+			<a href="adminLogin.html">Admin Login</a> <a
+				href="customerLogin.html">Customer Login</a>
+		</div>
+	</nav>
+	<form name="adminLoginForm" action="admin" method="post"
+		onsubmit="return validateForm()">
+
+		<label for="uname">User Name:</label> <br><input type="text" id="uname"
+			name="uname"><br> <label for="password">Password:</label><br>
+		<input type="password" id="password" name="password"><br>
+
+		<input type="submit" value="Login"><br>
+
+	</form>
+</body>
+</html>

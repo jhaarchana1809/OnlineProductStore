@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Customer Login</title>
+<!-- Bootstrap CSS -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+        margin: 0;
+        padding: 0;
+    }
+nav {
+        background-color: #4CAF50;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    nav h1 {
+        color: white;
+        margin: 0;
+    }
+    nav .links {
+        display: flex;
+        gap: 10px;
+    }
+    nav a {
+        display: inline-block;
+        padding: 10px 20px;
+        text-decoration: none;
+        color: #4CAF50;
+        background-color: white;
+        border-radius: 5px;
+        transition: background-color 0.3s, color 0.3s;
+    }
+    nav a:hover {
+        background-color: #45a049;
+        color: white;
+    }
+        .container {
+        width: 50%;
+        margin: 50px auto;
+        background: white;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        
+    }
+    .register a {
+        color: blue;
+    }
+    .register a:hover {
+        text-decoration: underline;
+    }
+</style>
+</head>
+<body>
+<nav>
+    <h1>Welcome to our store</h1>
+    <div class="links">
+        <a href="adminLogin.html">Admin Login</a>
+        <a href="customerLogin.html">Customer Login</a>
+    </div>
+</nav>
+<div class="container">
+    <form action="customerLogin" method="post" id="loginForm">
+        <h1>Customer Login</h1>
+        <div class="form-group">
+            <label for="uname">User Name:</label>
+            <input type="text" class="form-control" id="uname" name="uname">
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" class="form-control" id="password" name="password">
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+        <p class="register mt-3">New Customer? <a href="customerRegister.html">Register</a></p>  
+    </form>
+</div>
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        var uname = document.getElementById('uname').value;
+        var password = document.getElementById('password').value;
+        if (uname === '' || password === '') {
+            alert('Please fill in all fields');
+            event.preventDefault(); // Prevent form submission
+        }
+    });
+</script>
+</body>
+</html>
